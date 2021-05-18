@@ -1,9 +1,11 @@
-﻿using ProjetoDDD.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoDDD.Domain.Entities;
 using ProjetoDDD.Domain.Interfaces.Base;
 using ProjetoDDD.Infra.Data.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ProjetoDDD.Infra.Data.Repository.Base
 {
@@ -16,29 +18,31 @@ namespace ProjetoDDD.Infra.Data.Repository.Base
             _sqlServerContext = sqlServerContext;
         }
 
-        public void Insert(TEntity obj)
+        public async Task<TEntity> Insert(TEntity obj)
         {
             _sqlServerContext.Set<TEntity>().Add(obj);
-            _sqlServerContext.SaveChanges();
+            await _sqlServerContext.SaveChangesAsync();
+            return obj;
         }
 
-        public void Update(TEntity obj)
+        public async Task Update(TEntity obj)
         {
             _sqlServerContext.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            _sqlServerContext.SaveChanges();
+            await _sqlServerContext.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _sqlServerContext.Set<TEntity>().Remove(Select(id));
-            _sqlServerContext.SaveChanges();
+            var entity = await Select(id);
+            _sqlServerContext.Set<TEntity>().Remove(entity);
+            await _sqlServerContext.SaveChangesAsync();
         }
 
-        public IList<TEntity> Select() =>
-            _sqlServerContext.Set<TEntity>().ToList();
+        public async Task<IEnumerable<TEntity>> Select() =>
+            await _sqlServerContext.Set<TEntity>().ToListAsync();
 
-        public TEntity Select(int id) =>
-            _sqlServerContext.Set<TEntity>().Find(id);
+        public async Task<TEntity> Select(int id) =>
+            await _sqlServerContext.Set<TEntity>().FindAsync(id);
 
     }
 }

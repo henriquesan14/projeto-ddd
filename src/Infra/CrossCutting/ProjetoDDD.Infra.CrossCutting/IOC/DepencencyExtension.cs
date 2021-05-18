@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Extensions.DependencyInjection;
+using ProjetoDDD.Application.Interfaces;
+using ProjetoDDD.Application.Services;
 using ProjetoDDD.Domain.Interfaces;
 using ProjetoDDD.Domain.Interfaces.Base;
 using ProjetoDDD.Infra.Data.Repository;
@@ -22,6 +24,9 @@ namespace ProjetoDDD.Infra.CrossCutting.IOC
             //Services
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             services.AddTransient<IUserService, UserService>();
+
+            //Applications
+            services.AddTransient<IUserApplication, UserApplication>();
 
             return services;
         }

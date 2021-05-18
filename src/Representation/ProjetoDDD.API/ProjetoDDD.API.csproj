@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -18,9 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\ProjetoDDD.Domain\ProjetoDDD.Domain.csproj" />
+    <ProjectReference Include="..\..\Application\ProjetoDDD.Application\ProjetoDDD.Application.csproj" />
     <ProjectReference Include="..\..\Infra\CrossCutting\ProjetoDDD.Infra.CrossCutting\ProjetoDDD.Infra.CrossCutting.csproj" />
-    <ProjectReference Include="..\..\Service\ProjetoDDD.Service\ProjetoDDD.Service.csproj" />
   </ItemGroup>
 
 

@@ -2,19 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ProjetoDDD.Domain.Interfaces.Base
 {
     public interface IBaseRepository<TEntity> where TEntity : BaseEntity
     {
-        void Insert(TEntity obj);
+        Task<TEntity> Insert(TEntity obj);
 
-        void Update(TEntity obj);
+        Task Update(TEntity obj);
 
-        void Delete(int id);
+        Task Delete(int id);
 
-        IList<TEntity> Select();
+        Task<IEnumerable<TEntity>> Select();
 
-        TEntity Select(int id);
+        Task<TEntity> Select(int id);
     }
 }
