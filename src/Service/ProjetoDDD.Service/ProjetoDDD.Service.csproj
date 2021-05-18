@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\ProjetoDDD.Domain\ProjetoDDD.Domain.csproj" />
+    <ProjectReference Include="..\..\Infra\Data\ProjetoDDD.Infra.Data\ProjetoDDD.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

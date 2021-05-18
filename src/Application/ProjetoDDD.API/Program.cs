@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ModeloDDD.API
+namespace ProjetoDDD.API
 {
     public class Program
     {
