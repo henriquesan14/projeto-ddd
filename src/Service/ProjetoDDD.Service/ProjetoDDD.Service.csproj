@@ -9,7 +9,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Domain\ProjetoDDD.Domain\ProjetoDDD.Domain.csproj" />
     <ProjectReference Include="..\..\Infra\Data\ProjetoDDD.Infra.Data\ProjetoDDD.Infra.Data.csproj" />
   </ItemGroup>
 

@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Application\ProjetoDDD.Application\ProjetoDDD.Application.csproj" />
     <ProjectReference Include="..\..\Infra\CrossCutting\ProjetoDDD.Infra.CrossCutting\ProjetoDDD.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
