@@ -18,14 +18,14 @@ namespace ProjetoDDD.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateUserDTO user)
+        public async Task<IActionResult> Create([FromBody] UserDTO user)
         {
             UserDTO userDto = await _userApplication.Add(user);
             return Created(new Uri($"{Request.Path}/{user.Id}", UriKind.Relative), userDto);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] CreateUserDTO user)
+        public async Task<IActionResult> Update([FromBody] UserDTO user)
         {
             await _userApplication.Update(user);
             return NoContent();

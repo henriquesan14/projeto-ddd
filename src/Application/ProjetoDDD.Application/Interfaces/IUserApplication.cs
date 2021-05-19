@@ -1,21 +1,11 @@
 ﻿using ProjetoDDD.Application.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using ProjetoDDD.Application.Interfaces.Base;
+using ProjetoDDD.Domain.Entities;
+using ProjetoDDD.Service.Validators;
 
 namespace ProjetoDDD.Application.Interfaces
 {
-    public interface IUserApplication
+    public interface IUserApplication : IBaseApplication<User, UserDTO, UserValidator>
     {
-        Task<UserDTO> Add(CreateUserDTO obj);
-
-        Task Delete(int id);
-
-        Task<IEnumerable<UserDTO>> Get();
-
-        Task<UserDTO> GetById(int id);
-
-        Task<UserDTO> Update(CreateUserDTO obj);
     }
 }

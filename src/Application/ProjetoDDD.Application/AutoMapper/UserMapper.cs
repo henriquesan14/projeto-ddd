@@ -9,7 +9,6 @@ namespace ProjetoDDD.Application.AutoMapper
         public UserMapper()
         {
             CreateMap<User, UserDTO>().ReverseMap();
-            CreateMap<User, CreateUserDTO>().ReverseMap();
         }
     }
 }
