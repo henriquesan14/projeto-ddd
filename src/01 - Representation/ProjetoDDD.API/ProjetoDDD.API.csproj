@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Infra\CrossCutting\ProjetoDDD.Infra.CrossCutting\ProjetoDDD.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\..\05 - Infra\CrossCutting\ProjetoDDD.Infra.CrossCutting\ProjetoDDD.Infra.CrossCutting.csproj" />
   </ItemGroup>
 
 

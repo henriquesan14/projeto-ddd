@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Service\ProjetoDDD.Service\ProjetoDDD.Service.csproj" />
+    <ProjectReference Include="..\..\05 - Infra\Data\ProjetoDDD.Infra.Data\ProjetoDDD.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>
